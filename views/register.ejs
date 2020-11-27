@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="jumbotron" style="background: none; margin-top: 100px;">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h1 class="display-4 topic">
+                    Register
+                </h1>
+                <p>
+                    Enter the spunky kitchen of CodeChef SRM and become a beautiful cup-cake in a world full of muffins.
+                </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <form action="/register" method="post">
+                    <div class="form-row">
+                      <div class="col">
+                        <label for="exampleInputtext"><span>First Name</span></label>
+                        <input type="text" name="firstname" class="form-control" placeholder="First name" required>
+                      </div>
+                      <div class="col">
+                        <label for="exampleInputtext"><span>Last Name</span></label>
+                        <input type="text" name="lastname" class="form-control" placeholder="Last name" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><span>Email address</span></label>
+                      <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputtext"><span>Password</span></label>
+                      <input type="password" name="password" class="form-control" placeholder="Enter Your Password" required>
+                    </div>
+                    <button type="submit" class="button-success">Register</button>
+                  </form>
+                  <p style="font-size: 14px;">Already registered? <a href="/login" style="font-size: 14px;">Log In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="jumbotron" style="background: none; margin-top: 100px;">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h1 class="display-4 topic">
+                    Forgot?
+                </h1>
+                <p>
+                    “Blessed are the forgetful, for they get the better even of their blunders.”
+                </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <form method="POST" action="/forgot">
+                    <div class="form-group">
+                        <label for="email">
+                        <span>Email</span>
+                        </label>
+                     <input class="form-control" placeholder="Your Email" type="email" name="email" required>
+                    </div>
+                     <button class="button-success" type="submit">Change</button>
+                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/footer') %>
+

@@ -1,0 +1,252 @@
+:root{
+  --olive-green: #d85f42;
+  --cream: #f0e4d6;
+  --orange: #ce4d35;
+  --yellow: #df9f70;
+  --dark-green: #a64137;
+}
+
+
+
+body {
+  
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Kalam', cursive;
+    font-size: 18px;
+    font-weight: 300;
+    color: black;
+  }
+.form-group label{
+  color: #d85f42;
+}
+
+.form-row label{
+  color: #d85f42;
+}
+
+ label{
+  color: #d85f42;
+}
+
+
+  th{
+  color:#d85f42;  
+  }
+  .topic{
+      
+      
+    font-weight: 400;
+    color: #d85f42;
+    font-size: 45px;
+  }
+
+  strong{
+     color: #d85f42;
+  }
+
+ /* label{
+   font-weight: bold;
+
+ } */
+
+ 
+
+ .card{
+   padding: 45px 45px 45px 45px;
+   border-radius: 50px;
+   box-shadow: #d85f42;
+   border-color: rgba(216, 95, 66, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(216, 95, 66, 0.6);
+  outline: 0 none;
+
+ }
+
+ .naver a{
+   font-size: 16px;
+   color:"black";
+ }
+
+
+ /* linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), */
+
+.herobg{
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2.png");
+  background-size: 100% 100% ;
+  background-repeat: no-repeat ;
+  height: 80vh;
+}
+.margintop{
+  padding-top: 180px!important;
+}
+@media only screen and (max-width:1024px){
+  .herobg{
+    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2mm.png");
+    background-size: 100% 100% ;
+    background-repeat: no-repeat ;
+    height: 80vh;
+  }
+  .margintop{
+    padding-top: 130px!important;
+  }
+}
+
+@media only screen and (max-width:990px){
+  .herobg{
+    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2mm.png");
+    background-size: 100% 100% ;
+    background-repeat: no-repeat ;
+    height: 80vh;
+  }
+  .margintop{
+    padding-top: 30px!important;
+  }
+}
+@media only screen and (max-width:440px){
+  .herobg{
+    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2m.png");
+    background-size: 100% 100% ;
+    background-repeat: no-repeat ;
+    height: 80vh;
+  }
+  .margintop{
+    padding-top: 50px!important;
+  }
+}
+
+.text-warning mark{
+  background-color: #ffd49c;
+}
+
+.button {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+.button:hover {
+  box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate(0px, -10px) scale(1.2);
+          transform: translate(0px, -10px) scale(1.2);
+}
+
+#signin, #register{
+  display: none;
+
+}
+
+
+
+
+
+
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+ .social-container {
+	 width: auto;
+	 margin: 0 auto;
+	 text-align: center;
+}
+ .social-icons {
+	 padding: 0;
+	 list-style: none;
+	 margin: 1em;
+}
+ .social-icons li {
+	 display: inline-block;
+	 margin: 0.15em;
+	 position: relative;
+	 font-size: 1.2em;
+}
+ .social-icons i {
+	 color: #fff;
+	 position: absolute;
+	 top: 21px;
+	 left: 21px;
+	 transition: all 265ms ease-out;
+}
+ .social-icons a {
+	 display: inline-block;
+}
+ .social-icons a:before {
+	 transform: scale(1);
+	 -ms-transform: scale(1);
+	 -webkit-transform: scale(1);
+	 content: " ";
+	 width: 60px;
+	 height: 60px;
+	 border-radius: 100%;
+	 display: block;
+	 background: linear-gradient(45deg, var(--olive-green), var(--dark-green));
+	 transition: all 265ms ease-out;
+}
+ .social-icons a:hover:before {
+	 transform: scale(0);
+	 transition: all 265ms ease-in;
+}
+ .social-icons a:hover i {
+	 transform: scale(2.2);
+	 -ms-transform: scale(2.2);
+	 -webkit-transform: scale(2.2);
+	 color: var(--dark-green);
+	 background: -webkit-linear-gradient(45deg, var(--olive-green), var(--dark-green));
+	 -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+	 transition: all 265ms ease-in;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+#aboutSec{
+  font-family: 'Kalam', cursive;
+}
+
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.custom-select:focus,
+#Questionaire1:focus,
+.uneditable-input:focus {   
+  border-color: rgba(216, 95, 66, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(216, 95, 66, 0.6);
+  outline: 0 none;
+}
+
+.modal-body{
+  border-color: rgba(216, 95, 66, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(216, 95, 66, 0.6);
+  outline: 0 none;
+}
+
+nav{
+  border-bottom: #d85f42 solid 2px;
+  border-top: #d85f42 solid 2px;
+  border-right: #d85f42 solid 2px;
+  border-left: #d85f42 solid 2px;
+}
+
+
+.form-control:valid {
+  background-color:  #ffd49c!important;
+}
+

@@ -1,0 +1,100 @@
+<hr class="my-3">
+<section id="footer" class="text-center">
+    <img src="images/LOGOZ.png" alt="" height="40" width="40">
+   <div class="mt-2">
+      <ul style="list-style: none;padding: 0;">
+          <li>Explore</li>
+          <li><a href="https://codechefsrm.in/" target="_blank">CodeChef SRM</a></li>
+          <li><a href="https://codechefsrm.in/team" target="_blank">Team</a></li>
+          <li><a href="https://codechefsrm.in/events" target="_blank">Events</a></li>
+      </ul>
+   </div>
+</section>
+<hr>
+<div class="row">
+    <div class="col-12 col-md-6 text-center" style="margin-top: 38px;">
+        <i style="color:#d85f42;" class="fa fa-copyright"></i> CodeChef SRM Chapter 2020.
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="social-container">
+            <ul class="social-icons">
+                <li><a href="https://www.instagram.com/codechefsrm/"><i class="fa fa-instagram" target="_blank"></i></a></li>
+                <li><a href="https://www.facebook.com/CodeChefSRM/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://in.linkedin.com/company/ccscsrm"><i class="fa fa-linkedin" target="_blank"></i></a></li>
+                <li><a href="mailto:codechefsrm@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+<script>
+  
+var options = {
+    strings: ['#EnlistInCCSC'],
+    typeSpeed: 100,
+    loopCount: Infinity
+    };
+var typed = new Typed('.element', options);
+</script>
+
+
+<script>
+
+function validateDropdown(e) {
+            var status1 = validateBranch();
+            var status2 = validateYear();
+          
+            if (status1 == true && status2 == true) {
+                return true;
+            }
+            else{            
+                return false;
+                e.preventDefault();
+            }
+        }
+
+        function validateYear() {
+            var x = document.getElementById("year").value;
+            if (x == "none") {
+                alert("Please select your year of study");
+                return false;
+            }
+            else{return true;}
+            
+        }
+
+       
+        function validateBranch() {
+            var x = document.getElementById("branch").value;
+            if (x == "none") {
+                alert("Please select your branch of study");
+                return false;
+            }
+            else{return true;}
+        }
+
+    function display2(show) {
+        if (show.id == "Technical") {
+            document.getElementById("op1").classList.toggle("d-none");
+        }
+        else if (show.id == "Corporate") {
+            document.getElementById("op2").classList.toggle("d-none");
+        }
+        else {
+            document.getElementById("op3").classList.toggle("d-none");
+        }
+    }
+   
+    
+</script>
+
+</body>
+</html>

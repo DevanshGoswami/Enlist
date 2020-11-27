@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+
+    <div class="container">
+        <div class="jumbotron" style="background: none; margin-top: 100px;">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h1 class="display-4 topic">
+                        Reset Password
+                    </h1>
+                    <p>
+                        “Reset your tune to Divine melody.”
+                    </p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <form action="/reset/<%= token %>" method="POST">
+                        <div class="form-group">
+                            <label for="password">New Password</label>
+                            <input class="form-control" type="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm">Confirm Password</label>
+                            <input class="form-control" type="password" name="confirm" required>
+                        </div>
+                        <button class="button-success" type="submit">Change</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>
