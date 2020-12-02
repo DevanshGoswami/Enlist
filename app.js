@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-
+var flash = require("connect-flash");
 
 var passport = require("passport");
 var localStrategy = require("passport-local");
@@ -14,6 +14,7 @@ var crypto = require("crypto");
 var publicDir = require('path').join(__dirname,'/public'); 
 app.use(express.static(publicDir)); 
 app.use(express.static('public'));
+app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // mongoose.connect("mongodb://localhost/users",{ useNewUrlParser: true ,useUnifiedTopology: true});
@@ -39,6 +40,7 @@ app.use(passport.session());
 
 app.use((req,res,next)=>{
     res.locals.currentUser = req.user;
+    res.locals.message = req.flash("error");
     next();
 });
 
@@ -60,8 +62,8 @@ const isLoggedIn = (req,res,next) => {
         return next();
     }
     else{
-        
-        res.redirect("/");
+        req.flash("error","You must be logged in for that.");
+        res.redirect("/login");
     }
 }
 
@@ -117,7 +119,7 @@ app.get("/login",(req,res)=>{
 app.post("/register",(req,res)=>{
  User.register(new User({username: req.body.username, firstname: req.body.firstname, lastname: req.body.lastname}),req.body.password,(err,user)=>{
      if(err){
-         console.log(err);
+         req.flash("error",err.message);
          res.redirect("/register");
      }
      else{
@@ -136,7 +138,8 @@ res.render("rules",{current: req.user,title:"Rules"});
 
 app.post("/login", passport.authenticate('local',{
     successRedirect:"/secret",
-    failureRedirect:"/login"
+    failureRedirect:"/login",
+    failureFlash: true
 }));
 
 
@@ -196,6 +199,7 @@ app.get('/forgot', function(req, res) {
       }
     ], function(err) {
       if (err) return next(err);
+      req.flash("error","Check your mailbox!")
       res.redirect('/forgot');
     });
   });
@@ -252,7 +256,8 @@ app.get('/forgot', function(req, res) {
         });
       }
     ], function(err) {
-      res.redirect('/');
+      req.flash("error","Password has been successfully changed.")
+      res.redirect('/login');
     });
   });
 
