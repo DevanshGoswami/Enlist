@@ -70,7 +70,7 @@ body {
  /* linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), */
 
 .herobg{
-  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2.png");
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("https://lh3.googleusercontent.com/pw/ACtC-3deZntPft6a-e9qOpV7ogQ669gugP-IavmnyWgf7ZjesGjEgtZDKUUlBXXx-3Y0aSaLzXyzHAvv26TeMa8GFFvMAG_-fAqUwHzCRIVwuBy8FbwXY_MWMZSOB3G6IM70xjaehY0KaPldg7P5euTl22bf=w1690-h950-no?authuser=0");
   background-size: 100% 100% ;
   background-repeat: no-repeat ;
   height: 80vh;
@@ -80,7 +80,7 @@ body {
 }
 @media only screen and (max-width:1024px){
   .herobg{
-    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2mm.png");
+    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("https://lh3.googleusercontent.com/pw/ACtC-3dFU2z_5J1kyp3YDjK-Sz4y-4fpvfHFRVYjsfaTi5r6JpD6NdKhx3Tr9iDATOHF0KqQs4hFuDghIQr4FJi56UT9mJmwIhf2dU3W6G88-Xj7URzMHlE_8scc4ThCcaLMHjtcNj-I-CjAETCBB3g7ZibL=w810-h950-no?authuser=0");
     background-size: 100% 100% ;
     background-repeat: no-repeat ;
     height: 80vh;
@@ -92,7 +92,7 @@ body {
 
 @media only screen and (max-width:990px){
   .herobg{
-    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2mm.png");
+    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("https://lh3.googleusercontent.com/pw/ACtC-3dFU2z_5J1kyp3YDjK-Sz4y-4fpvfHFRVYjsfaTi5r6JpD6NdKhx3Tr9iDATOHF0KqQs4hFuDghIQr4FJi56UT9mJmwIhf2dU3W6G88-Xj7URzMHlE_8scc4ThCcaLMHjtcNj-I-CjAETCBB3g7ZibL=w810-h950-no?authuser=0");
     background-size: 100% 100% ;
     background-repeat: no-repeat ;
     height: 80vh;
@@ -103,7 +103,7 @@ body {
 }
 @media only screen and (max-width:440px){
   .herobg{
-    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../images/hero2m.png");
+    background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("https://lh3.googleusercontent.com/pw/ACtC-3dg3ZRHOzBCvy7TXi7IYHLFO4iwnTKFmDuCDYKB7BtWVRuhWBy9o1nesYkbtbhbDB9o7UUs3E0qCTnnt-FO7-tw_nLrYavtI_NKTZPFlSC_CBMzbk9No8PTbhUDCbptPH_a3G9bCNPltiJ-485KYQ-1=w535-h950-no?authuser=0");
     background-size: 100% 100% ;
     background-repeat: no-repeat ;
     height: 80vh;
