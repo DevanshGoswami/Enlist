@@ -10,8 +10,7 @@
 
 body {
   
-    /* font-family: 'Raleway', sans-serif; */
-    font-family: 'Kalam', cursive;
+  font-family: 'Dekko', cursive;
     font-size: 18px;
     font-weight: 300;
     color: black;
@@ -201,11 +200,6 @@ body {
 	 transition: all 265ms ease-in;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
-
-#aboutSec{
-  font-family: 'Kalam', cursive;
-}
 
 
 
