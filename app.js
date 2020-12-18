@@ -186,7 +186,7 @@ app.get('/forgot', function(req, res) {
         });
         var mailOptions = {
           to: user.username,
-          from: 'codechefsrm@gmail.com',
+          from: 'CodeChef SRM Chapter',
           subject: 'Recruitment Portal Password Reset',
           text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
@@ -262,6 +262,10 @@ app.get('/forgot', function(req, res) {
     });
   });
 
+  app.get('/.well-known/pki-validation/',(req,res)=>{
+   res.sendFile('7A71523B8BB931ACD72FCB13AC4180C5.txt');
+  });
+
 
 app.listen(server_port, server_host,()=>{
     console.log("Server Running on:" + server_host + "://" + server_port)
@@ -279,7 +283,7 @@ var sendConfirmation = (eMAIL, nAME) => {
   });
   var mailOptions = {
     to: eMAIL,
-    from: 'codechefsrm@gmail.com',
+    from: 'CodeChef SRM Chapter',
     subject: 'You have been successfully registered!!',
     text: 'Hey ' + nAME + ',\n\n' +
       'We have recieved your application.\n' +
@@ -292,4 +296,3 @@ var sendConfirmation = (eMAIL, nAME) => {
     console.log('mail sent');
     done(err, 'done');
   });
-}
