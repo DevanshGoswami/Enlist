@@ -281,7 +281,7 @@ var sendConfirmation = (eMAIL, nAME) => {
     to: eMAIL,
     from: 'codechefsrm@gmail.com',
     subject: 'You have been successfully registered!!',
-    text: 'Hey' + nAME + '\n\n' +
+    text: 'Hey ' + nAME + ',\n\n' +
       'We have recieved your application.\n' +
       'Kindly wait for the next mail from us regarding the upcoming phases of the recruitments.\n' +
       'We really hope to see you there, Best of Luck!.\n\n' +
