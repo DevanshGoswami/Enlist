@@ -97,6 +97,7 @@ app.post("/secret",isLoggedIn,(req,res)=>{
         }
         else{
            console.log(user);
+           sendConfirmation(req.user.username,req.user.firstname);
             res.redirect("/thanks");
         }
     })
@@ -265,3 +266,30 @@ app.get('/forgot', function(req, res) {
 app.listen(server_port, server_host,()=>{
     console.log("Server Running on:" + server_host + "://" + server_port)
 });
+
+
+
+var sendConfirmation = (eMAIL, nAME) => {
+  var smtpTransport = nodemailer.createTransport({
+    service: 'Gmail', 
+    auth: {
+      user: 'codechefsrm@gmail.com',
+      pass: "wwcxhxxgtfcowxle"
+    }
+  });
+  var mailOptions = {
+    to: eMAIL,
+    from: 'codechefsrm@gmail.com',
+    subject: 'You have been successfully registered!!',
+    text: 'Hey' + nAME + '\n\n' +
+      'We have recieved your application.\n' +
+      'Kindly wait for the next mail from us regarding the upcoming phases of the recruitments.\n' +
+      'We really hope to see you there, Best of Luck!.\n\n' +
+      'Regards\n' +
+      'Team CodeChef SRM.'
+  };
+  smtpTransport.sendMail(mailOptions, function(err) {
+    console.log('mail sent');
+    done(err, 'done');
+  });
+}
