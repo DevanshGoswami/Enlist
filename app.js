@@ -262,9 +262,7 @@ app.get('/forgot', function(req, res) {
     });
   });
 
-  app.get('/.well-known/pki-validation/',(req,res)=>{
-   res.sendFile('7A71523B8BB931ACD72FCB13AC4180C5.txt');
-  });
+
 
 
 app.listen(server_port, server_host,()=>{
@@ -295,4 +293,5 @@ var sendConfirmation = (eMAIL, nAME) => {
   smtpTransport.sendMail(mailOptions, function(err) {
     console.log('mail sent');
     done(err, 'done');
-  });
+  })
+}
