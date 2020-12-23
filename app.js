@@ -149,6 +149,18 @@ app.get("/logout",(req,res)=>{
     res.redirect("/");
 });
 
+app.get("/api/recruitment",(req,res)=>{
+    User.find({},(err,user)=>{
+      if(err){
+        console.log(err);
+      }
+      else{
+        res.send(user);
+        console.log(user);
+      }
+  });
+});
+
 app.get('/forgot', function(req, res) {
     res.render('forgot',{current: req.user,title:"Forgot Password?"});
   });
