@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var flash = require("connect-flash");
-
+var cors = require('cors')
 var passport = require("passport");
 var localStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
@@ -32,7 +32,7 @@ app.use(require("express-session")({
   saveUninitialized: false
 }));
 
-
+app.use(cors())
 app.set("view engine", "ejs");
 
 app.use(passport.initialize());
