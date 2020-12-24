@@ -161,6 +161,18 @@ app.get("/api/recruitment",(req,res)=>{
   });
 });
 
+app.get("/api/recruitment/:id",(req,res)=>{
+  User.findOne({_id:req.params.id},(err,user)=>{
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.send(user);
+      console.log(user);
+    }
+});
+});
+
 app.get('/forgot', function(req, res) {
     res.render('forgot',{current: req.user,title:"Forgot Password?"});
   });
