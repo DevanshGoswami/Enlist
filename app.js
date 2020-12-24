@@ -173,6 +173,30 @@ app.get("/api/recruitment/:id",(req,res)=>{
 });
 });
 
+app.get("/api/recruitment/:id/accept",(req,res)=>{
+  User.findOneAndUpdate({_id:req.params.id},{$set:{selected:true}},(err,user)=>{
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.send(user);
+      console.log(user);
+    }
+});
+});
+
+app.get("/api/recruitment/:id/reject",(req,res)=>{
+  User.findOneAndUpdate({_id:req.params.id},{$set:{selected:false}},(err,user)=>{
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.send(user);
+      console.log(user);
+    }
+});
+});
+
 app.get('/forgot', function(req, res) {
     res.render('forgot',{current: req.user,title:"Forgot Password?"});
   });
