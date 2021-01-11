@@ -12,3 +12,19 @@ color: #a64137;
 }
 
 
+.titlebg {
+    background-color: #d85f42;
+  }
+  .titletext {
+    color: #fff;
+    font-weight: 800;
+  }
+  
+  
+ 
+  .card-header, .card-footer{
+    background-color: white
+    ;
+  }
+  
+  

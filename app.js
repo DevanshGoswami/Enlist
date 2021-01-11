@@ -8,6 +8,7 @@ var passport = require("passport");
 var localStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 var User = require('./user');
+var Task = require("./submit");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
@@ -311,10 +312,41 @@ app.get('/forgot', function(req, res) {
   });
 
 
+app.post("/technical/tasks",(req,res)=>{
+ var submit = {
+   email: req.user.username,
+   firstname: req.user.firstname,
+   lastname: req.user.lastname,
+   telnum: req.user.telnum,
+   submission: req.body.tech,
+   linkedin: req.user.linkedin,
+   year: req.user.year,
+   technical : req.user.technical,
+   corporate : req.user.corporate,
+   creatives : req.user.creatives
+ }
+
+ if(!submit.submission){
+   res.status(400);
+   return ;
+ }
+Task.create(submit,(err,task)=>{
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log(task);
+    req.flash("error","Your Submission was made.")
+    res.redirect('/secret');
+  }
+});
+
+});
+
 
 
 app.listen(server_port, server_host,()=>{
-    console.log("Server Running on:" + server_host + "://" + server_port)
+    console.log("Server Running on:" + server_host + ":" + server_port)
 });
 
 
