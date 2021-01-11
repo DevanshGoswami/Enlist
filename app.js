@@ -343,6 +343,33 @@ Task.create(submit,(err,task)=>{
 
 });
 
+app.get("/create",(req,res)=>{
+  var applicant = {
+    year: "1",
+    linkedin: req.body.linkedin,
+    branch: req.body.branch,
+    telnum: req.body.telnum,
+    reg: req.body.reg,
+    technical : req.body.techSub,
+    corporate : req.body.corpSub,
+    creatives : req.body.createSub,
+    github : req.body.github,
+    about: req.body.about,
+    why: req.body.why
+}
+
+User.findOneAndUpdate({username: req.user.username},applicant,(err,user)=>{
+    if(err){
+        res.redirect("/secret");
+    }
+    else{
+       console.log(user);
+       sendConfirmation(req.user.username,req.user.firstname);
+        res.redirect("/thanks");
+    }
+})
+});
+
 
 
 app.listen(server_port, server_host,()=>{
