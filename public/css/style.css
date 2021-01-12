@@ -60,6 +60,14 @@ body {
 
  }
 
+ .card-form{
+  border: none; 
+  border-radius: none;
+   box-shadow: none;
+   border-color: none;
+
+ }
+
  .naver a{
    font-size: 16px;
    color:"black";

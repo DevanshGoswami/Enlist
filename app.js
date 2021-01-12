@@ -109,28 +109,28 @@ app.get("/thanks",isLoggedIn,(req,res)=>{
   res.render("thanks",{current: req.user,title:"Thank You!"});
 });
 
-app.get("/register",(req,res)=>{
-res.render("register",{current: req.user,title:"Register"});
-});
+// app.get("/register",(req,res)=>{
+// res.render("register",{current: req.user,title:"Register"});
+// });
 
 app.get("/login",(req,res)=>{
   res.render("login",{current: req.user,title:"Login"});
   });
   
 
-app.post("/register",(req,res)=>{
- User.register(new User({username: req.body.username, firstname: req.body.firstname, lastname: req.body.lastname}),req.body.password,(err,user)=>{
-     if(err){
-         req.flash("error",err.message);
-         res.redirect("/register");
-     }
-     else{
-         passport.authenticate("local")(req,res,()=>{
-            res.redirect("/rules");
-         });
-     }
- })
-});
+// app.post("/register",(req,res)=>{
+//  User.register(new User({username: req.body.username, firstname: req.body.firstname, lastname: req.body.lastname}),req.body.password,(err,user)=>{
+//      if(err){
+//          req.flash("error",err.message);
+//          res.redirect("/register");
+//      }
+//      else{
+//          passport.authenticate("local")(req,res,()=>{
+//             res.redirect("/rules");
+//          });
+//      }
+//  })
+// });
 
 app.get("/rules",isLoggedIn,(req,res)=>{
 res.render("rules",{current: req.user,title:"Rules"});
