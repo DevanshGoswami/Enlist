@@ -370,6 +370,16 @@ User.findOneAndUpdate({username: req.user.username},applicant,(err,user)=>{
 })
 });
 
+app.get("/api/tasks",(req,res)=>{
+ Task.find({},(err,tasks)=>{
+   if(err){
+     res.send(err);
+   }
+   else{
+     res.send(tasks);
+   }
+ });
+});
 
 
 app.listen(server_port, server_host,()=>{
