@@ -6,9 +6,8 @@ var flash = require("connect-flash");
 var cors = require('cors')
 var passport = require("passport");
 var localStrategy = require("passport-local");
-var passportLocalMongoose = require("passport-local-mongoose");
-var User = require('./user');
-var Task = require("./submit");
+var User = require('./models/user');
+var Task = require("./models/submit");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
@@ -17,9 +16,11 @@ app.use(express.static(publicDir));
 app.use(express.static('public'));
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
+const dotenv = require("dotenv");
+dotenv.config();
 
 // mongoose.connect("mongodb://localhost/users",{ useNewUrlParser: true ,useUnifiedTopology: true});
-mongoose.connect("mongodb+srv://Devansh:Password@cluster0.qvgeg.mongodb.net/users?retryWrites=true&w=majority",{ useNewUrlParser: true ,useUnifiedTopology: true})
+mongoose.connect(process.env.MONGOURL,{ useNewUrlParser: true ,useUnifiedTopology: true})
 .then(() => console.log( 'Database Connected' ))
 .catch(err => console.log( err ));
 
@@ -28,7 +29,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 app.use(require("express-session")({
-  secret: "hello hello",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -67,6 +68,8 @@ const isLoggedIn = (req,res,next) => {
         res.redirect("/login");
     }
 }
+
+
 
 app.get("/secret",isLoggedIn,(req,res)=>{
 
@@ -150,53 +153,7 @@ app.get("/logout",(req,res)=>{
     res.redirect("/");
 });
 
-app.get("/api/recruitment",(req,res)=>{
-    User.find({},(err,user)=>{
-      if(err){
-        console.log(err);
-      }
-      else{
-        res.send(user);
-        console.log(user);
-      }
-  });
-});
 
-app.get("/api/recruitment/:id",(req,res)=>{
-  User.findOne({_id:req.params.id},(err,user)=>{
-    if(err){
-      console.log(err);
-    }
-    else{
-      res.send(user);
-      console.log(user);
-    }
-});
-});
-
-app.get("/api/recruitment/:id/accept",(req,res)=>{
-  User.findOneAndUpdate({_id:req.params.id},{$set:{selected:true}},(err,user)=>{
-    if(err){
-      console.log(err);
-    }
-    else{
-      res.send(user);
-      console.log(user);
-    }
-});
-});
-
-app.get("/api/recruitment/:id/reject",(req,res)=>{
-  User.findOneAndUpdate({_id:req.params.id},{$set:{selected:false}},(err,user)=>{
-    if(err){
-      console.log(err);
-    }
-    else{
-      res.send(user);
-      console.log(user);
-    }
-});
-});
 
 app.get('/forgot', function(req, res) {
     res.render('forgot',{current: req.user,title:"Forgot Password?"});
@@ -229,8 +186,8 @@ app.get('/forgot', function(req, res) {
         var smtpTransport = nodemailer.createTransport({
           service: 'Gmail', 
           auth: {
-            user: 'codechefsrm@gmail.com',
-            pass: "wwcxhxxgtfcowxle"
+            user: process.env.MAIL,
+            pass: process.env.APPPASS
           }
         });
         var mailOptions = {
@@ -290,8 +247,8 @@ app.get('/forgot', function(req, res) {
         var smtpTransport = nodemailer.createTransport({
           service: 'Gmail', 
           auth: {
-            user: 'codechefsrm@gmail.com',
-            pass: "wwcxhxxgtfcowxle"
+            user: process.env.MAIL,
+            pass: process.env.APPPASS
           }
         });
         var mailOptions = {
@@ -370,16 +327,6 @@ User.findOneAndUpdate({username: req.user.username},applicant,(err,user)=>{
 })
 });
 
-app.get("/api/tasks/abcdefghijklmnop",(req,res)=>{
- Task.find({},(err,tasks)=>{
-   if(err){
-     res.send(err);
-   }
-   else{
-     res.send(tasks);
-   }
- });
-});
 
 
 app.listen(server_port, server_host,()=>{
@@ -392,8 +339,8 @@ var sendConfirmation = (eMAIL, nAME) => {
   var smtpTransport = nodemailer.createTransport({
     service: 'Gmail', 
     auth: {
-      user: 'codechefsrm@gmail.com',
-      pass: "wwcxhxxgtfcowxle"
+      user: process.env.MAIL,
+      pass: process.env.APPPASS
     }
   });
   var mailOptions = {
